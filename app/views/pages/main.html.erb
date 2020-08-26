@@ -1,0 +1,13 @@
+<div class="container d-flex justify-content-center home">
+  <div class='align-self-center'>
+    <h1>Welcome to CharlesHR</h1>
+    <p>Unforgetful HR Software</p>
+    <% if user_signed_in? %>
+      <p>current user: <%= current_user.email%></p>
+        <p><%= link_to "Create of edit your holidays", holidays_path%></p >
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+    <% else %>
+      <%= link_to('Login', new_user_session_path) %>  
+    <% end %>
+  </div>
+</div>

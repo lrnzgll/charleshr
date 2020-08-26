@@ -1,0 +1,17 @@
+<div class='container d-flex justify-content-center home'>
+  <div class='align-self-center'>
+    <% @holidays.each do |holiday| %>
+      <div class="<%= holiday.deleted ? "bg-warning" : "bg-info"%> m-5 p-3">
+        <h3>User: <%= holiday.user.email.split(/@/).first %></h3>
+        <p>Holiday date: <%= holiday.date.strftime('%A, %b %d') %></p>
+        <p>Holiday created by: <%= holiday.creator.email.split(/@/).first %></p>
+        <p>Deleted: <%= holiday.deleted %></p>
+
+        <p>Updated: <%= holiday.updated_at.strftime('%a, %e %b %Y %H:%M:%S') %>, by <%= holiday.modifier.presence&.email&.split(/@/)&.first || holiday.creator.email.split(/@/).first %></p>
+        <div>
+          <%= link_to "Edit", edit_holiday_path(holiday) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
