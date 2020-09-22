@@ -1,0 +1,39 @@
+.holiday-card {
+  background-color: rgb(210, 240, 240);
+  margin: 50px;
+  padding: 20px;
+  border-radius: 5px;
+  border: thick double rgb(190, 220, 220);
+  position: relative; 
+
+  p {
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+}
+
+.holiday-status {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  background-color: red;
+  border-radius: 2px;
+  p {
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 2px;
+  }
+}
+
+.create-holidays {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.new-holiday {
+  border: 1px solid blue;
+  border-radius: 3px;
+  padding: 20px;
+}

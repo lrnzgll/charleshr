@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   root to: 'pages#main'
 
-  get 'holidays',               to:  'holidays#index'
-  post 'holidays/create',       to:  'holidays#create'
-  get  'holidays/:id/edit',     to:  'holidays#edit', as: :edit_holiday
-  patch 'holidays/update',      to:  'holidays#update'
+  resources :holidays
+  get 'delete_holiday/:id', to: 'holidays#delete_request', as: :delete_holiday
+
+  get 'holiday/:id/events', to: 'holidays#events', as: :holiday_events
 end

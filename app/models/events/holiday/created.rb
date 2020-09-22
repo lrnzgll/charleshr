@@ -4,9 +4,8 @@ class Events::Holiday::Created < Events::Holiday::BaseEvent
 
   def apply(holiday)
     holiday.date = date
-    holiday.user_id = user
+    holiday.user_id = user 
     holiday.created_by_id = created_by
-    holiday.modified_by_id = modified_by
     holiday.deleted = deleted
   
     holiday

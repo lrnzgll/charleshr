@@ -5,4 +5,12 @@ body {
   min-height: 100vh;
 }
 
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 @import "./home.scss";
+@import "./holidays.scss";

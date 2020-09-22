@@ -1,8 +1,4 @@
-<div class='container d-flex justify-content-center home'>
-  <div class='align-self-center'>
-    <%= simple_form_for(@holiday) do |form| %>
-      <%= form.input :date %>
-      <%= form.submit %>
-    <% end %>
-  </div>
-</div>
+<%= form_with model: @holiday do |f| %>
+  <%= f.date_field :date %>
+  <%= f.submit %>
+<% end %>

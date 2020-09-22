@@ -15,7 +15,6 @@ class Events::BaseEvent < ActiveRecord::Base
   end
 
   after_initialize do
-    binding.pry
     self.event_type = event_type
     self.payload ||= {}
   end
@@ -77,7 +76,6 @@ class Events::BaseEvent < ActiveRecord::Base
     aggregate.lock! if aggregate.persisted?
 
     # Apply!
-    binding.pry
     self.aggregate = apply(aggregate)
 
     #Persist!
@@ -86,7 +84,6 @@ class Events::BaseEvent < ActiveRecord::Base
   end
   
   def find_or_build_aggregate
-    binding.pry
     self.aggregate = find_aggregate if aggregate_id.present?
     self.aggregate = build_aggregate if self.aggregate.nil?
   end
@@ -102,6 +99,6 @@ class Events::BaseEvent < ActiveRecord::Base
 
 
   def event_type
-    self.attributes["event_type"] || self.class.to_s.split("::").last
+    self.attributes["event_type"] || self.class.to_s
   end
 end

@@ -1,0 +1,8 @@
+<div class='new-holiday text-center'>
+  <h2>Take some time off</h2>
+  <%= form_with model: @holiday do |f| %>
+    <%= f.label :date %>
+    <%= f.date_field :date, value: Date.today + 1 %>
+    <%= f.submit %>
+  <% end %>
+</div>

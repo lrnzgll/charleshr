@@ -1,0 +1,10 @@
+<h1>Delete this holiday?</h1>
+<div class="holiday-card">
+  <h3>User: <%= @holiday.user.email.split(/@/).first %></h3>
+  <p>id: <%= @holiday.id %></p>
+  <p>Holiday date: <%= @holiday.date.strftime('%A, %b %d') %></p>
+  <p>Holiday created by: <%= @holiday.creator.email.split(/@/).first %></p>
+  <p>Updated: <%= @holiday.updated_at.strftime('%a, %e %b %Y %H:%M:%S') %>, by <%= @holiday.modifier.presence&.email&.split(/@/)&.first || @holiday.creator.email.split(/@/).first %></p>
+</div>
+
+<%= link_to 'Delete', holiday_path(@holiday), method: :delete %>

@@ -1,0 +1,6 @@
+<div>
+  <% @events.each do |e| %>
+    <p><%= e.class.to_s %></p>
+    <p><%= e.payload %></p>
+  <% end %>
+</div>
